@@ -1,0 +1,3 @@
+/home/connor/Programming/cProjects/music-scales-terminal/CMakeFiles/scales.dir
+/home/connor/Programming/cProjects/music-scales-terminal/CMakeFiles/edit_cache.dir
+/home/connor/Programming/cProjects/music-scales-terminal/CMakeFiles/rebuild_cache.dir

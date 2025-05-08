@@ -1,0 +1,1 @@
+/usr/bin/cc -Wl,--dependency-file=CMakeFiles/scales.dir/link.d CMakeFiles/scales.dir/src/main.c.o CMakeFiles/scales.dir/src/scale.c.o -o scales

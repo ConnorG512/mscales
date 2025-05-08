@@ -14,12 +14,5 @@ struct MusicKey
   const char name[];
 };  
 
-struct MusicKey c_major = 
-{
-    0,
-    Major,
-    {2,2,1,2,2,2,1},
-    "C Major",
-};
 
-extern void print_scale();
+// MusicKey* GetMusicalKey(Note baseNote, bool major);
