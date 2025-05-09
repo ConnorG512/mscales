@@ -24,8 +24,8 @@ class MusicScale {
     ScaleType m_scale { MusicScale::ScaleType::Major };
 
   private:
-    static constexpr std::array<std::string_view, 11> m_tonic_scale_sharp{ "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "B" }; 
-    static constexpr std::array<std::string_view, 11> m_tonic_scale_flat{ "C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "B" };
+    static constexpr std::array<std::string_view, 11> m_chromatic_scale_sharp{ "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "B" }; 
+    static constexpr std::array<std::string_view, 11> m_chromatic_scale_flat{ "C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "B" };
     std::array<uint8_t, 7> m_scale_increments { 2, 2, 1, 2, 2, 2, 1 };
   
   public:

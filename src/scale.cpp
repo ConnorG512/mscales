@@ -84,22 +84,11 @@ void MusicScale::calculateMusicKey()
   std::cout << "TODO: calculateMusicKey called!" << std::endl;
   std::cout << "m_scale_increments size: " << m_scale_increments.size() << std::endl; 
   uint8_t counter { 0 };
-  while (counter < m_scale_increments.size() - 1) {
-    ++counter;
-    std::cout << m_tonic_scale_sharp[0] << " ";
+  while (counter < m_scale_increments.size()) {
+    std::cout << m_chromatic_scale_sharp[0] << " ";
+    counter++;
   } 
-  
-  std::cout << m_tonic_scale_sharp[0] << std::endl;
-
-  //  std::cout << "scale_increments size: " << scale_increments.size() << std::endl;
-  // while (scale_position <= scale_increments.size()) {
-  //   std::cout << tonic_scale_sharp [ scale_position ] << " ";
-  //   scale_position += scale_increments[ index ];
-  //   index += 1;
-  //   if (scale_position >= 12) {
-  //     scale_position = 0;
-  //     std::cout << tonic_scale_sharp [ scale_position ] << std::endl;
-  //   }
-  // }
+  // Print the original tonic note at the end.
+  std::cout << m_chromatic_scale_sharp[0] << std::endl;
 }
 
