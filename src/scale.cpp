@@ -1,4 +1,6 @@
+#include <cstdint>
 #include <iostream>
+#include <iterator>
 #include <ostream>
 #include <string>
 #include <format>
@@ -80,6 +82,14 @@ void MusicScale::calculateMusicKey()
 {
   // TODO
   std::cout << "TODO: calculateMusicKey called!" << std::endl;
+  std::cout << "m_scale_increments size: " << m_scale_increments.size() << std::endl; 
+  uint8_t counter { 0 };
+  while (counter < m_scale_increments.size() - 1) {
+    ++counter;
+    std::cout << m_tonic_scale_sharp[0] << " ";
+  } 
+  
+  std::cout << m_tonic_scale_sharp[0] << std::endl;
 
   //  std::cout << "scale_increments size: " << scale_increments.size() << std::endl;
   // while (scale_position <= scale_increments.size()) {
