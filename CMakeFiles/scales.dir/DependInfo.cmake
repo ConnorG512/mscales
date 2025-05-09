@@ -8,8 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/connor/Programming/cProjects/music-scales-terminal/src/main.c" "CMakeFiles/scales.dir/src/main.c.o" "gcc" "CMakeFiles/scales.dir/src/main.c.o.d"
-  "/home/connor/Programming/cProjects/music-scales-terminal/src/scale.c" "CMakeFiles/scales.dir/src/scale.c.o" "gcc" "CMakeFiles/scales.dir/src/scale.c.o.d"
+  "/home/connor/Programming/cppProjects/music-scales-terminal/src/main.cpp" "CMakeFiles/scales.dir/src/main.cpp.o" "gcc" "CMakeFiles/scales.dir/src/main.cpp.o.d"
   "" "scales" "gcc" "CMakeFiles/scales.dir/link.d"
   )
 

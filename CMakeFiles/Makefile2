@@ -54,10 +54,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/connor/Programming/cProjects/music-scales-terminal
+CMAKE_SOURCE_DIR = /home/connor/Programming/cppProjects/music-scales-terminal
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/connor/Programming/cProjects/music-scales-terminal
+CMAKE_BINARY_DIR = /home/connor/Programming/cppProjects/music-scales-terminal
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -85,14 +85,14 @@ clean: CMakeFiles/scales.dir/clean
 CMakeFiles/scales.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/scales.dir/build.make CMakeFiles/scales.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/scales.dir/build.make CMakeFiles/scales.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/connor/Programming/cProjects/music-scales-terminal/CMakeFiles --progress-num=1,2,3 "Built target scales"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/connor/Programming/cppProjects/music-scales-terminal/CMakeFiles --progress-num=1,2 "Built target scales"
 .PHONY : CMakeFiles/scales.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/scales.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/connor/Programming/cProjects/music-scales-terminal/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/connor/Programming/cppProjects/music-scales-terminal/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/scales.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/connor/Programming/cProjects/music-scales-terminal/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/connor/Programming/cppProjects/music-scales-terminal/CMakeFiles 0
 .PHONY : CMakeFiles/scales.dir/rule
 
 # Convenience name for target.
@@ -102,7 +102,7 @@ scales: CMakeFiles/scales.dir/rule
 # codegen rule for target.
 CMakeFiles/scales.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/scales.dir/build.make CMakeFiles/scales.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/connor/Programming/cProjects/music-scales-terminal/CMakeFiles --progress-num=1,2,3 "Finished codegen for target scales"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/connor/Programming/cppProjects/music-scales-terminal/CMakeFiles --progress-num=1,2 "Finished codegen for target scales"
 .PHONY : CMakeFiles/scales.dir/codegen
 
 # clean rule for target.

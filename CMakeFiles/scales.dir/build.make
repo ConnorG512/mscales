@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/connor/Programming/cProjects/music-scales-terminal
+CMAKE_SOURCE_DIR = /home/connor/Programming/cppProjects/music-scales-terminal
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/connor/Programming/cProjects/music-scales-terminal
+CMAKE_BINARY_DIR = /home/connor/Programming/cppProjects/music-scales-terminal
 
 # Include any dependencies generated for this target.
 include CMakeFiles/scales.dir/depend.make
@@ -72,48 +72,32 @@ include CMakeFiles/scales.dir/flags.make
 CMakeFiles/scales.dir/codegen:
 .PHONY : CMakeFiles/scales.dir/codegen
 
-CMakeFiles/scales.dir/src/main.c.o: CMakeFiles/scales.dir/flags.make
-CMakeFiles/scales.dir/src/main.c.o: src/main.c
-CMakeFiles/scales.dir/src/main.c.o: CMakeFiles/scales.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/connor/Programming/cProjects/music-scales-terminal/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/scales.dir/src/main.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/scales.dir/src/main.c.o -MF CMakeFiles/scales.dir/src/main.c.o.d -o CMakeFiles/scales.dir/src/main.c.o -c /home/connor/Programming/cProjects/music-scales-terminal/src/main.c
+CMakeFiles/scales.dir/src/main.cpp.o: CMakeFiles/scales.dir/flags.make
+CMakeFiles/scales.dir/src/main.cpp.o: src/main.cpp
+CMakeFiles/scales.dir/src/main.cpp.o: CMakeFiles/scales.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/connor/Programming/cppProjects/music-scales-terminal/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/scales.dir/src/main.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/scales.dir/src/main.cpp.o -MF CMakeFiles/scales.dir/src/main.cpp.o.d -o CMakeFiles/scales.dir/src/main.cpp.o -c /home/connor/Programming/cppProjects/music-scales-terminal/src/main.cpp
 
-CMakeFiles/scales.dir/src/main.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/scales.dir/src/main.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/connor/Programming/cProjects/music-scales-terminal/src/main.c > CMakeFiles/scales.dir/src/main.c.i
+CMakeFiles/scales.dir/src/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/scales.dir/src/main.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/connor/Programming/cppProjects/music-scales-terminal/src/main.cpp > CMakeFiles/scales.dir/src/main.cpp.i
 
-CMakeFiles/scales.dir/src/main.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/scales.dir/src/main.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/connor/Programming/cProjects/music-scales-terminal/src/main.c -o CMakeFiles/scales.dir/src/main.c.s
-
-CMakeFiles/scales.dir/src/scale.c.o: CMakeFiles/scales.dir/flags.make
-CMakeFiles/scales.dir/src/scale.c.o: src/scale.c
-CMakeFiles/scales.dir/src/scale.c.o: CMakeFiles/scales.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/connor/Programming/cProjects/music-scales-terminal/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/scales.dir/src/scale.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/scales.dir/src/scale.c.o -MF CMakeFiles/scales.dir/src/scale.c.o.d -o CMakeFiles/scales.dir/src/scale.c.o -c /home/connor/Programming/cProjects/music-scales-terminal/src/scale.c
-
-CMakeFiles/scales.dir/src/scale.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/scales.dir/src/scale.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/connor/Programming/cProjects/music-scales-terminal/src/scale.c > CMakeFiles/scales.dir/src/scale.c.i
-
-CMakeFiles/scales.dir/src/scale.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/scales.dir/src/scale.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/connor/Programming/cProjects/music-scales-terminal/src/scale.c -o CMakeFiles/scales.dir/src/scale.c.s
+CMakeFiles/scales.dir/src/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/scales.dir/src/main.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/connor/Programming/cppProjects/music-scales-terminal/src/main.cpp -o CMakeFiles/scales.dir/src/main.cpp.s
 
 # Object files for target scales
 scales_OBJECTS = \
-"CMakeFiles/scales.dir/src/main.c.o" \
-"CMakeFiles/scales.dir/src/scale.c.o"
+"CMakeFiles/scales.dir/src/main.cpp.o"
 
 # External object files for target scales
 scales_EXTERNAL_OBJECTS =
 
-scales: CMakeFiles/scales.dir/src/main.c.o
-scales: CMakeFiles/scales.dir/src/scale.c.o
+scales: CMakeFiles/scales.dir/src/main.cpp.o
 scales: CMakeFiles/scales.dir/build.make
 scales: CMakeFiles/scales.dir/compiler_depend.ts
 scales: CMakeFiles/scales.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/connor/Programming/cProjects/music-scales-terminal/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable scales"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/connor/Programming/cppProjects/music-scales-terminal/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable scales"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/scales.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -125,6 +109,6 @@ CMakeFiles/scales.dir/clean:
 .PHONY : CMakeFiles/scales.dir/clean
 
 CMakeFiles/scales.dir/depend:
-	cd /home/connor/Programming/cProjects/music-scales-terminal && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/connor/Programming/cProjects/music-scales-terminal /home/connor/Programming/cProjects/music-scales-terminal /home/connor/Programming/cProjects/music-scales-terminal /home/connor/Programming/cProjects/music-scales-terminal /home/connor/Programming/cProjects/music-scales-terminal/CMakeFiles/scales.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/connor/Programming/cppProjects/music-scales-terminal && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/connor/Programming/cppProjects/music-scales-terminal /home/connor/Programming/cppProjects/music-scales-terminal /home/connor/Programming/cppProjects/music-scales-terminal /home/connor/Programming/cppProjects/music-scales-terminal /home/connor/Programming/cppProjects/music-scales-terminal/CMakeFiles/scales.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/scales.dir/depend
 

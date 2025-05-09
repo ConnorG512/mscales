@@ -1,7 +1,7 @@
 {
 	"InstallScripts" : 
 	[
-		"/home/connor/Programming/cProjects/music-scales-terminal/cmake_install.cmake"
+		"/home/connor/Programming/cppProjects/music-scales-terminal/cmake_install.cmake"
 	],
 	"Parallel" : false
 }
