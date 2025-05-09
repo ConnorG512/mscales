@@ -1,9 +1,9 @@
 #include <cstdint>
 #include <iostream>
-#include <iterator>
 #include <ostream>
 #include <string>
 #include <format>
+#include <sys/types.h>
 
 #include "scale.hpp"
 
@@ -82,13 +82,12 @@ void MusicScale::calculateMusicKey()
 {
   // TODO
   std::cout << "TODO: calculateMusicKey called!" << std::endl;
-  std::cout << "m_scale_increments size: " << m_scale_increments.size() << std::endl; 
-  uint8_t counter { 0 };
-  while (counter < m_scale_increments.size()) {
-    std::cout << m_chromatic_scale_sharp[0] << " ";
-    counter++;
-  } 
-  // Print the original tonic note at the end.
-  std::cout << m_chromatic_scale_sharp[0] << std::endl;
+  
+  uint8_t current_scale_increment { 0 };
+  for (uint8_t index { 0 }; index < m_scale_increments.size(); ++index ) {
+    std::cout << m_chromatic_scale_sharp[current_scale_increment] << " ";
+    current_scale_increment += m_scale_increments[ index ];
+  };
+  std::cout << std::endl;
 }
 
