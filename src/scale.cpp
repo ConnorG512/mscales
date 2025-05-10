@@ -82,17 +82,12 @@ void MusicScale::calculateMusicKey()
 {
   // TODO
   std::cout << "TODO: calculateMusicKey called!" << std::endl;
-  
   uint8_t current_scale_increment { 0 };
   for (uint8_t index { 0 }; index < m_scale_increments.size(); ++index ) 
   {
-    std::cout << m_chromatic_scale_sharp[current_scale_increment] << " ";
-    if (current_scale_increment > m_chromatic_scale_sharp.size()) 
-    {
-      index = current_scale_increment % m_chromatic_scale_sharp.size();
-    }
+    std::cout << m_chromatic_scale_sharp[ current_scale_increment ] << " ";
     current_scale_increment += m_scale_increments[ index ];
+    current_scale_increment = current_scale_increment % m_chromatic_scale_sharp.size();
   };
-  std::cout << std::endl;
 }
 
