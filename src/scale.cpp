@@ -80,8 +80,6 @@ void MusicScale::printTitlebar()
 }
 void MusicScale::calculateMusicKey()
 {
-  // TODO
-  std::cout << "TODO: calculateMusicKey called!" << std::endl;
   uint8_t current_scale_increment { 0 };
   for (uint8_t index { 0 }; index < m_scale_increments.size(); ++index ) 
   {
