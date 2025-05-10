@@ -1,6 +1,7 @@
 #include <array>
 #include <cstdint>
 #include <iostream>
+#include <ostream>
 #include <string_view>
 #include <sys/types.h>
 
@@ -57,5 +58,6 @@ void MusicScale::calculateMusicKey(uint8_t scale_offset)
     current_scale_increment += m_scale_increments[ index ];
     current_scale_increment = current_scale_increment % m_chromatic_scale_sharp.size();
   };
+  std::cout << std::endl; 
 }
 
