@@ -3,38 +3,27 @@
 #include <string_view>
 #include <array>
 #include <cstdint>
+#include <sys/types.h>
+#include <vector>
 
 class MusicScale {
   public:
     enum class TonicNote 
     {
-      C, C_sharp, D_flat, D,
-      D_sharp, E_flat, E, F,
-      F_sharp, G_flat, G, G_sharp,
-      A_flat, A, A_sharp, B_flat,
-      B
+      C, G, D, A, E, B, G_Flat, F_Sharp, D_Flat, A_Flat, E_Flat, B_Flat, F
     };
-    enum class ScaleType
-    {
-      Major,
-      Minor
-    };
-    
-    TonicNote m_tonic { MusicScale::TonicNote::C };
-    ScaleType m_scale { MusicScale::ScaleType::Major };
+    TonicNote m_key_tonic{}; 
 
   private:
     static constexpr std::array<std::string_view, 12> m_chromatic_scale_sharp{ "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B" }; 
     static constexpr std::array<std::string_view, 12> m_chromatic_scale_flat{ "C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B" };
-    std::array<uint8_t, 7> m_scale_increments { 2, 2, 1, 2, 2, 2, 1};
+    std::vector<uint8_t> m_scale_increments { 2, 2, 1, 2, 2, 2, 1};
   
   public:
-  MusicScale(TonicNote tonic_note, ScaleType scale);
-  void printTitlebar();
-  void calculateMusicKey();
+    MusicScale(TonicNote tonic_note);
+    void startKeyGeneration();
+  private:
+    uint8_t determineChromaticOffsetAndKey();
+    void calculateMusicKey(uint8_t scale_offset);
 };
-
-
-
-
 

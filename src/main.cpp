@@ -5,8 +5,7 @@
 
 int main (int argc, char *argv[]) 
 {
-  auto c_major { std::make_unique<MusicScale>(MusicScale::TonicNote::C, MusicScale::ScaleType::Major )};
-  c_major->printTitlebar();
-  c_major->calculateMusicKey();
+  auto major_scale { std::make_unique<MusicScale>(MusicScale::TonicNote::D) };
+  major_scale->startKeyGeneration();
   return 0;
 }   

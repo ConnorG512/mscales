@@ -1,86 +1,56 @@
+#include <array>
 #include <cstdint>
 #include <iostream>
-#include <ostream>
-#include <string>
-#include <format>
+#include <string_view>
 #include <sys/types.h>
 
 #include "scale.hpp"
 
-MusicScale::MusicScale(TonicNote tonic_note, ScaleType scale)
-  : m_tonic { tonic_note }, m_scale { scale } {};
-
-void MusicScale::printTitlebar() 
+// PUBLIC
+MusicScale::MusicScale(TonicNote tonic_note)
+  : m_key_tonic { tonic_note } {}
+void MusicScale::startKeyGeneration()
 {
-  std::string tonic_note {};
-  std::string scale {};
-
-  switch (m_tonic) {
-    case MusicScale::TonicNote::C:
-      tonic_note = "C";
-      break;
-    case MusicScale::TonicNote::C_sharp:
-      tonic_note = "C#";
-      break;
-    case MusicScale::TonicNote::D_flat:
-      tonic_note = "Db";
-      break;
-    case MusicScale::TonicNote::D:
-      tonic_note = "D";
-      break;
-    case MusicScale::TonicNote::D_sharp:
-      tonic_note = "D#";
-      break;
-    case MusicScale::TonicNote::E_flat:
-      tonic_note = "Eb";
-      break;
-    case MusicScale::TonicNote::E:
-      tonic_note = "E";
-      break;
-    case MusicScale::TonicNote::F:
-      tonic_note = "F";
-      break;
-    case MusicScale::TonicNote::F_sharp:
-      tonic_note = "F#";
-      break;
-    case MusicScale::TonicNote::G_flat:
-      tonic_note = "Gb";
-      break;
-    case MusicScale::TonicNote::G:
-      tonic_note = "G";
-      break;
-    case MusicScale::TonicNote::G_sharp:
-      tonic_note = "G#";
-      break;
-    case MusicScale::TonicNote::A_flat:
-      tonic_note = "Ab";
-      break;
-    case MusicScale::TonicNote::A:
-      tonic_note = "A";
-      break;
-    case MusicScale::TonicNote::A_sharp:
-      tonic_note = "A#";
-      break;
-    case MusicScale::TonicNote::B_flat:
-      tonic_note = "Bb";
-      break;
-    case MusicScale::TonicNote::B:
-      tonic_note = "B";
-      break;
-  }
-  switch (m_scale) {
-    case MusicScale::ScaleType::Major:
-      scale = "Major";
-      break;
-    case MusicScale::ScaleType::Minor:
-      scale = "Minor"; 
-      break;
-  }
-  std::cout << std::format("{} {}:", tonic_note, scale) << std::endl;
+  uint8_t tonic_scale_offset = determineChromaticOffsetAndKey();
+  calculateMusicKey(tonic_scale_offset);
 }
-void MusicScale::calculateMusicKey()
+
+// PRIVATE
+uint8_t MusicScale::determineChromaticOffsetAndKey() 
 {
-  uint8_t current_scale_increment { 0 };
+  switch (m_key_tonic) {
+    // Organised in relation to the Circle of Fiths
+    case MusicScale::TonicNote::C:
+      return 0;
+    case MusicScale::TonicNote::G:
+      return 7;
+    case MusicScale::TonicNote::D:
+      return 2;
+    case MusicScale::TonicNote::A:
+      return 9;
+    case MusicScale::TonicNote::E:
+      return 4; 
+    case MusicScale::TonicNote::B:
+      return 11;
+    case MusicScale::TonicNote::G_Flat:
+      return 6;
+    case MusicScale::TonicNote::F_Sharp:
+      return 6;
+    case MusicScale::TonicNote::D_Flat:
+      return 1;
+    case MusicScale::TonicNote::A_Flat:
+      return 8;
+    case MusicScale::TonicNote::E_Flat:
+      return 3;
+    case MusicScale::TonicNote::B_Flat:
+      return 10;
+    case MusicScale::TonicNote::F:
+      return 5;
+  }
+}
+void MusicScale::calculateMusicKey(uint8_t scale_offset)
+{
+  uint8_t current_scale_increment { scale_offset };
   for (uint8_t index { 0 }; index < m_scale_increments.size(); ++index ) 
   {
     std::cout << m_chromatic_scale_sharp[ current_scale_increment ] << " ";
