@@ -18,7 +18,7 @@ class MusicScale {
     struct KeyProperties 
     {
       std::array<std::string_view, 12>chromatic_scale {};
-      uint8_t note_offset {};
+      uint8_t note_offset { 0 };
     };
     std::vector<uint8_t> m_scale_increments { 2, 2, 1, 2, 2, 2, 1};
   

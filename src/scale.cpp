@@ -1,5 +1,6 @@
 #include <array>
 #include <cstdint>
+#include <cstring>
 #include <iostream>
 #include <ostream>
 #include <string>
@@ -98,7 +99,7 @@ void MusicScale::calculateMusicKey(const KeyProperties& current_key_properties)
     current_scale_increment += m_scale_increments[ index ];
     current_scale_increment = current_scale_increment % current_key_properties.chromatic_scale.size();
   };
-
+  
   std::cout << calculated_key_result << std::endl;
 }
 
