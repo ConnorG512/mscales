@@ -2,8 +2,10 @@
 #include <cstdint>
 #include <iostream>
 #include <ostream>
+#include <string>
 #include <string_view>
 #include <sys/types.h>
+#include <vector>
 
 #include "scale.hpp"
 
@@ -86,14 +88,17 @@ void MusicScale::determineChromaticOffsetAndKey(KeyProperties& current_key_prope
 }
 void MusicScale::calculateMusicKey(const KeyProperties& current_key_properties)
 {
+  std::string calculated_key_result {};
   uint8_t current_scale_increment { current_key_properties.note_offset };
 
   for (uint8_t index { 0 }; index < m_scale_increments.size(); ++index ) 
   {
-    std::cout << current_key_properties.chromatic_scale[ current_scale_increment ] << " ";
+    calculated_key_result += current_key_properties.chromatic_scale [ current_scale_increment];
+    calculated_key_result += " ";
     current_scale_increment += m_scale_increments[ index ];
     current_scale_increment = current_scale_increment % current_key_properties.chromatic_scale.size();
   };
-  std::cout << std::endl; 
+
+  std::cout << calculated_key_result << std::endl;
 }
 
