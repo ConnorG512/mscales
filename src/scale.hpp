@@ -15,8 +15,6 @@ class MusicScale {
     TonicNote m_key_tonic{}; 
 
   private:
-    static constexpr std::array<std::string_view, 12> m_chromatic_scale_sharp{ "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B" }; 
-    static constexpr std::array<std::string_view, 12> m_chromatic_scale_flat{ "C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B" };
     std::vector<uint8_t> m_scale_increments { 2, 2, 1, 2, 2, 2, 1};
   
   public:
@@ -24,6 +22,6 @@ class MusicScale {
     void startKeyGeneration();
   private:
     uint8_t determineChromaticOffsetAndKey();
-    void calculateMusicKey(uint8_t scale_offset);
+    void calculateMusicKey(uint8_t scale_offset, std::array<std::string_view, 12> chromatic_scale);
 };
 

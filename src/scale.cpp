@@ -12,8 +12,11 @@ MusicScale::MusicScale(TonicNote tonic_note)
   : m_key_tonic { tonic_note } {}
 void MusicScale::startKeyGeneration()
 {
+  static constexpr std::array<std::string_view, 12> chromatic_scale_sharp{ "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B" }; 
+  static constexpr std::array<std::string_view, 12> chromatic_scale_flat{ "C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B" };
+
   uint8_t tonic_scale_offset = determineChromaticOffsetAndKey();
-  calculateMusicKey(tonic_scale_offset);
+  calculateMusicKey(tonic_scale_offset, chromatic_scale_sharp);
 }
 
 // PRIVATE
@@ -49,14 +52,14 @@ uint8_t MusicScale::determineChromaticOffsetAndKey()
       return 5;
   }
 }
-void MusicScale::calculateMusicKey(uint8_t scale_offset)
+void MusicScale::calculateMusicKey(uint8_t scale_offset, std::array<std::string_view, 12> chromatic_scale)
 {
   uint8_t current_scale_increment { scale_offset };
   for (uint8_t index { 0 }; index < m_scale_increments.size(); ++index ) 
   {
-    std::cout << m_chromatic_scale_sharp[ current_scale_increment ] << " ";
+    std::cout << chromatic_scale[ current_scale_increment ] << " ";
     current_scale_increment += m_scale_increments[ index ];
-    current_scale_increment = current_scale_increment % m_chromatic_scale_sharp.size();
+    current_scale_increment = current_scale_increment % chromatic_scale.size();
   };
   std::cout << std::endl; 
 }
