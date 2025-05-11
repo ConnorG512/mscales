@@ -10,18 +10,23 @@ class MusicScale {
   public:
     enum class TonicNote 
     {
-      C, G, D, A, E, B, G_Flat, F_Sharp, D_Flat, A_Flat, E_Flat, B_Flat, F
+      C, G, D, A, E, B, G_Flat, F_Sharp, C_Sharp, D_Flat, A_Flat, E_Flat, B_Flat, F
     };
-    TonicNote m_key_tonic{}; 
+    TonicNote m_key_tonic {}; 
 
   private:
+    struct KeyProperties 
+    {
+      std::array<std::string_view, 12>chromatic_scale {};
+      uint8_t note_offset {};
+    };
     std::vector<uint8_t> m_scale_increments { 2, 2, 1, 2, 2, 2, 1};
   
   public:
     MusicScale(TonicNote tonic_note);
     void startKeyGeneration();
   private:
-    uint8_t determineChromaticOffsetAndKey();
-    void calculateMusicKey(uint8_t scale_offset, std::array<std::string_view, 12> chromatic_scale);
+    void determineChromaticOffsetAndKey(KeyProperties& current_key_properties);
+    void calculateMusicKey(const KeyProperties& current_key_properties);
 };
 
