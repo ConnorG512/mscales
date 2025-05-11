@@ -54,11 +54,11 @@ void MusicScale::determineChromaticOffsetAndKey(KeyProperties& current_key_prope
       current_key_properties.note_offset = 11;
       break;
     case MusicScale::TonicNote::G_Flat:
-      current_key_properties.chromatic_scale = chromatic_scale_flat;
+      current_key_properties.chromatic_scale = { "C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "Cb" };
       current_key_properties.note_offset = 6;
       break;
     case MusicScale::TonicNote::F_Sharp:
-      current_key_properties.chromatic_scale = chromatic_scale_sharp;
+      current_key_properties.chromatic_scale = { "C", "C#", "D", "D#", "E", "E#", "F#", "G", "G#", "A", "A#", "B" };
       current_key_properties.note_offset = 6;
       break;
     case MusicScale::TonicNote::C_Sharp:
