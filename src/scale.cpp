@@ -91,11 +91,14 @@ void MusicScale::calculateMusicKey(const KeyProperties& current_key_properties)
 {
   std::string calculated_key_result {};
   uint8_t current_scale_increment { current_key_properties.note_offset };
+  std::array<std::string_view, 7> roman_intervals {"I", "ii", "iii", "IV", "V", "vi", "vii°"};
 
   for (uint8_t index { 0 }; index < m_scale_increments.size(); ++index ) 
   {
+    calculated_key_result += roman_intervals[index];
+    calculated_key_result += " "; 
     calculated_key_result += current_key_properties.chromatic_scale [ current_scale_increment ];
-    calculated_key_result += " ";
+    calculated_key_result += ", ";
     current_scale_increment += m_scale_increments[ index ];
     current_scale_increment = current_scale_increment % current_key_properties.chromatic_scale.size();
   };
