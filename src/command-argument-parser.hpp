@@ -1,3 +1,4 @@
+#include <cstdint>
 #include <string_view>
 
 class CommandParser {
@@ -8,4 +9,5 @@ class CommandParser {
   // Member methods
   private: 
     bool parseStringArgument(std::string_view& command);
+    void countArgumentNum(uint8_t argument_num);
 };
