@@ -7,6 +7,7 @@
 
 int main (int argc, char *argv[]) 
 {
+  // Exit if no arguements are provided for the application.
   if (argc <= 1) {
     std::cout << "No Arguements provided!" << std::endl;
     return 0; 
