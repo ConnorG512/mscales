@@ -7,6 +7,7 @@
 
 namespace CommandParser {
   void checkForPassableArguementNumber(uint8_t current_command);
+  void listAllCommands();
   void parseCommand(std::string_view current_command);
   void executeScaleCommand(MusicScale::TonicNote tonic_note);
 };  
