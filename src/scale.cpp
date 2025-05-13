@@ -16,9 +16,14 @@ MusicScale::MusicScale(TonicNote tonic_note)
 void MusicScale::startKeyGeneration()
 {
   KeyProperties current_key_properties{};
+  std::string key_calculation_result{};
   determineChromaticOffsetAndKey(current_key_properties);
-  calculateMusicKey(current_key_properties);
-  calculateKeyChords(current_key_properties);
+
+  // Calculating the full diatonic key
+  calculateMusicKey(current_key_properties, key_calculation_result);
+  std::cout << "Scale: " << std::endl;
+  std::cout << key_calculation_result << std::endl;
+
 }
 
 // PRIVATE
@@ -104,29 +109,18 @@ void MusicScale::determineChromaticOffsetAndKey(KeyProperties& current_key_prope
       break;
   }
 }
-void MusicScale::calculateMusicKey(const KeyProperties& current_key_properties)
+void MusicScale::calculateMusicKey(KeyProperties& current_key_properties, std::string& key_result)
 {
-  std::string calculated_key_result {};
   uint8_t current_scale_increment { current_key_properties.note_offset };
 
-  std::cout << "Scale: " << std::endl;
   for (uint8_t index { 0 }; index < m_scale_increments.size(); ++index ) 
   {
-    calculated_key_result += current_key_properties.roman_intervals[index];
-    calculated_key_result += " "; 
-    calculated_key_result += current_key_properties.chromatic_scale [ current_scale_increment ];
-    calculated_key_result += ", ";
+    key_result += current_key_properties.roman_intervals[index];
+    key_result += " "; 
+    key_result += current_key_properties.chromatic_scale [ current_scale_increment ];
+    key_result += ", ";
     current_scale_increment += m_scale_increments[ index ];
     current_scale_increment = current_scale_increment % current_key_properties.chromatic_scale.size();
   };
-  
-  std::cout << calculated_key_result << std::endl;
-}
-void MusicScale::calculateKeyChords(const KeyProperties& current_key_properties) 
-{
-  std::cout << "Chords: " << std::endl;
-  for (uint8_t index { 0 }; index < current_key_properties.roman_intervals.size(); ++index) {
-    std::cout << current_key_properties.roman_intervals[ index ] << ":" << std::endl; // Print Roman Numeral
-  }
 }
 
