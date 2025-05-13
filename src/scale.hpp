@@ -29,5 +29,6 @@ class MusicScale {
   private:
     void determineChromaticOffsetAndKey(KeyProperties& current_key_properties);
     void calculateMusicKey(const KeyProperties& current_key_properties);
+    void calculateKeyChords(const KeyProperties& current_key_properties);
 };
 

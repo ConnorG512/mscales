@@ -4,6 +4,7 @@
 #include <ostream>
 #include <string>
 #include <string_view>
+#include <strings.h>
 #include <sys/types.h>
 #include <vector>
 
@@ -17,6 +18,7 @@ void MusicScale::startKeyGeneration()
   KeyProperties current_key_properties{};
   determineChromaticOffsetAndKey(current_key_properties);
   calculateMusicKey(current_key_properties);
+  calculateKeyChords(current_key_properties);
 }
 
 // PRIVATE
@@ -107,6 +109,7 @@ void MusicScale::calculateMusicKey(const KeyProperties& current_key_properties)
   std::string calculated_key_result {};
   uint8_t current_scale_increment { current_key_properties.note_offset };
 
+  std::cout << "Scale: " << std::endl;
   for (uint8_t index { 0 }; index < m_scale_increments.size(); ++index ) 
   {
     calculated_key_result += current_key_properties.roman_intervals[index];
@@ -118,5 +121,12 @@ void MusicScale::calculateMusicKey(const KeyProperties& current_key_properties)
   };
   
   std::cout << calculated_key_result << std::endl;
+}
+void MusicScale::calculateKeyChords(const KeyProperties& current_key_properties) 
+{
+  std::cout << "Chords: " << std::endl;
+  for (uint8_t index { 0 }; index < current_key_properties.roman_intervals.size(); ++index) {
+    std::cout << current_key_properties.roman_intervals[ index ] << ":" << std::endl; // Print Roman Numeral
+  }
 }
 
