@@ -10,5 +10,7 @@ add_executable(scales
   src/main.cpp
   src/scale.cpp
   src/scale.hpp
+  src/command-argument-parser.hpp
+  src/command-argument-parser.cpp
 )
 

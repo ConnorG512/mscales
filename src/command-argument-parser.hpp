@@ -1,13 +1,10 @@
+#include "scale.hpp"
 #include <cstdint>
 #include <string_view>
 
-class CommandParser {
-  // Member Data
-  private:
-  public:
-  
-  // Member methods
-  private: 
-    bool parseStringArgument(std::string_view& command);
-    void countArgumentNum(uint8_t argument_num);
-};
+
+namespace CommandParser {
+  void checkForPassableArguementNumber(uint8_t current_command);
+  void parseCommand(std::string_view current_command);
+  void executeScaleCommand(MusicScale::TonicNote tonic_note);
+};  
