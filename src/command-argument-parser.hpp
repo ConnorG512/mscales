@@ -1,3 +1,5 @@
+#pragma once
+
 #include "scale.hpp"
 #include <cstdint>
 #include <string_view>
