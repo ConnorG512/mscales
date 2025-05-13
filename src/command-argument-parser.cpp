@@ -105,4 +105,8 @@ void CommandParser::parseCommand(std::string_view current_command)
     auto major_scale { std::make_unique<MusicScale>(MusicScale::TonicNote::F) };
     major_scale->startKeyGeneration();
   }
+  else {
+    std::cout << "Invalid command! Please see list of commands below:" << std::endl;
+    listAllCommands();
+  }
 }
